@@ -15,4 +15,14 @@ def get_secret_word(word_file="/usr/share/dict/words"):
                 continue
             good_words.append(i)
     return random.choice(good_words)
+
+def get_guess_word(word_file="/usr/share/dict/words"):
+    with open(word_file) as f:
+        f=word_file
+        f='*' * len(word_file)
+    return(word_file)
+
+def tries_left(word_file="/usr/share/dict/words"):
+    with open(word_file) as f:
         
+     
