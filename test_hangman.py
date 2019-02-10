@@ -21,5 +21,8 @@ def test_secret_word_no_proper_nouns():
 
 def test_guess_word_masked():
     assert (hangman.get_guess_word("/usr/share/dict/words") == "*********" for _ in range(100))
-               
+
+def test_tries_left():
+    assert (hangman.set_tries_left() == "tries" for _ in range(100))
+
     

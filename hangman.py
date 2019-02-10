@@ -1,4 +1,4 @@
-# hangman.py
+ # hangman.py
 
 import random
 
@@ -22,7 +22,10 @@ def get_guess_word(word_file="/usr/share/dict/words"):
         f='*' * len(word_file)
     return(word_file)
 
-def tries_left(word_file="/usr/share/dict/words"):
+def set_tries_left(word_file="/usr/share/dict/words"):
     with open(word_file) as f:
-        
-     
+        tries =10
+        for tries in range(0, -1):
+            print=input("enter guess word",guess)
+            input(read.word())
+    return(tries)
