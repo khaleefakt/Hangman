@@ -16,16 +16,22 @@ def get_secret_word(word_file="/usr/share/dict/words"):
             good_words.append(i)
     return random.choice(good_words)
 
-def get_guess_word(word_file="/usr/share/dict/words"):
-    with open(word_file) as f:
-        f=word_file
-        f='*' * len(word_file)
-    return(word_file)
-
-def set_tries_left(word_file="/usr/share/dict/words"):
+def get_masked_word(word_file):
+        mask_word="*" * len(word_file)
+        return mask_word
+str="asdfgh"
+print(get_masked_word(str))
+"""def set_tries_left(word_file=""):
     with open(word_file) as f:
         tries =10
         for tries in range(0, -1):
             print=input("enter guess word",guess)
             input(read.word())
+            tries = tries -1
     return(tries)
+
+def input_letter(word_file, input_letter):
+    guess_word_list=[word_file]
+    for i in guess_word:"""
+        
+    
