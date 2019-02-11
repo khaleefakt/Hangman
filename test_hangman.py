@@ -6,9 +6,9 @@ import hangman
 # 2. Secret word should have no punctuation
 # 3. Secret word should not be a proper noun
 
-#   1. Masked secret word 
-#   2. Number of tries left
-#   3. Wrong guesses so far 
+#   4. Masked secret word 
+#   5. Number of tries left
+#   6. Wrong guesses so far 
 
 def test_secret_word_6_letters():
     assert all(hangman.get_secret_word("./test_data/1.words") == "policeman" for _ in range(100))
@@ -22,8 +22,8 @@ def test_secret_word_no_proper_nouns():
 def test_guess_word_masked():
     assert (hangman.get_masked_word("policeman") == "*********")
 
-"""def test_tries_left():
-    assert (hangman.set_tries_left() == "tries" for _ in range(100))
+def test_tries_left():
+    assert (hangman.set_tries_left(6) == 4)
 
-def""" 
+
 
