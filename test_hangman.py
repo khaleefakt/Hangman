@@ -25,5 +25,9 @@ def test_guess_word_masked():
 def test_tries_left():
     assert (hangman.set_tries_left(6) == 4)
 
+def get_type_guess_word():
+    assert (hangman.type_guess_word("policeman",a) == "*******a*")
+
+
 
 

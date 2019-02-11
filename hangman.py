@@ -20,7 +20,6 @@ def get_masked_word(word_file):
         mask_word="*" * len(word_file)
         return mask_word
     
-    #Direct give value for testing mask word
 """str="policeman"
 print(get_masked_word(str))"""
 
@@ -28,3 +27,34 @@ def set_tries_left(tries):
     tries_left = (10 - tries)
     return tries_left
 
+
+def type_guess_word(word_file, guess_word):
+    word_file_list =[]
+    guess_word_list =[]
+    for i in word_file_list:
+        word_file_list = word_file.append()
+        print= input("input a char{guess_word}")
+        if guess_word[i] == word_file_list[i]:
+            return guess_word
+        else:
+            print("oops that not in this masked word, type next charecter")
+    return word_file_list()
+"""
+
+def guess_word(word_file,guess_word):
+        guess_list = []
+        guess_word = []
+        for guess_list in range(1,10):
+            print=input("enter guess word",guess)
+            input(read.word())
+            tries = tries -1
+    return(tries)
+
+def input_letter(word_file, input_letter):
+    guess_word_list=[]
+    for i in guess_word:
+        
+        
+        
+    
+def main(masked_word,guess_word):"""
