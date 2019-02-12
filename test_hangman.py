@@ -28,8 +28,8 @@ def test_tries_left():
 def test_type_guess_word():
     assert (hangman.type_guess_word("policeman","a","*********") == "*******a*")
     assert (hangman.type_guess_word("policeman","p","*******a*") == "p******a*")
-
-    
+def test_set_masked_letter():
+    assert (hangman.set_masked_word() == "")  
 
 
 
