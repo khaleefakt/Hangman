@@ -49,15 +49,17 @@ def n_main():
     tries=10
     guess_word_list = []
     while a:
+        print("tries left {}".format(tries))
         t_left = set_tries_left(tries)
         guess_word=input("input a char\n")
         if guess_word in guess_word_list:
             print("already guessed")
+            continue
         else:
             guess_word_list.append(guess_word)
         guessed_line = type_guess_word(s_word, guess_word,guessed_line)
         print (guessed_line)
-        print (f"already guessed word{guess_word_list}")
+        print ("already guessed word{}".format(guess_word_list))
         tries = tries-1
         if (tries < 0):
             a= False
