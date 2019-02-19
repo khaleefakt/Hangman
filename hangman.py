@@ -47,10 +47,17 @@ def n_main():
     print(get_masked_word(s_word))
     a =True    
     tries=10
+    guess_word_list = []
     while a:
         t_left = set_tries_left(tries)
         guess_word=input("input a char\n")
-        print(type_guess_word(s_word, guess_word,guessed_line))
+        if guess_word in guess_word_list:
+            print("already guessed")
+        else:
+            guess_word_list.append(guess_word)
+        guessed_line = type_guess_word(s_word, guess_word,guessed_line)
+        print (guessed_line)
+        print (f"already guessed word{guess_word_list}")
         tries = tries-1
         if (tries < 0):
             a= False
