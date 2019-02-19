@@ -46,13 +46,13 @@ def n_main():
     guessed_line=(get_masked_word(s_word))
     print(get_masked_word(s_word))
     a =True    
-    tries=0
+    tries=10
     while a:
         t_left = set_tries_left(tries)
         guess_word=input("input a char\n")
         print(type_guess_word(s_word, guess_word,guessed_line))
-        tries = tries+1
-        if (tries == 10):
+        tries = tries-1
+        if (tries < 0):
             a= False
             print ("no tries left sorry..")
         
