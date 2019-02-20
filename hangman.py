@@ -20,13 +20,10 @@ def get_masked_word(word_file):
         mask_word="*" * len(word_file)
         return mask_word
     
-
-
 def set_tries_left(tries):
    
     tries_left = (10 - tries)
     return tries_left
-
 
 def type_guess_word(word_file, guess_word, guessed_line):
     if guess_word in word_file:
@@ -43,15 +40,23 @@ def type_guess_word(word_file, guess_word, guessed_line):
 def n_main():
     print ("Welcome.")
     s_word =(get_secret_word())
+    print(s_word)
     guessed_line=(get_masked_word(s_word))
     print(get_masked_word(s_word))
     a =True    
     tries=10
     guess_word_list = []
     while a:
-        print("tries left {}".format(tries))
+        if guessed_line == s_word:
+            print("\n you won")
+            break
+        print("------------------------------")
+        print("\ntries left {}".format(tries))
         t_left = set_tries_left(tries)
         guess_word=input("input a char\n")
+        if len(guess_word) != 1:
+            print("single char only...!!!")
+            continue
         if guess_word in guess_word_list:
             print("already guessed")
             continue
@@ -60,6 +65,7 @@ def n_main():
         guessed_line = type_guess_word(s_word, guess_word,guessed_line)
         print (guessed_line)
         print ("already guessed word{}".format(guess_word_list))
+        print("==============================")
         tries = tries-1
         if (tries < 0):
             a= False
