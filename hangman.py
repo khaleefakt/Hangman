@@ -33,7 +33,7 @@ def type_guess_word(word_file, guess_word, guessed_line):
                 guessed_line = guessed_line [0:x] + guess_word + guessed_line[x+1:]
             x = x+1
     else:
-        print("wrong guess")
+        print("Wrong guess")
     return guessed_line
 
     
@@ -48,27 +48,27 @@ def n_main():
     guess_word_list = []
     while a:
         if guessed_line == s_word:
-            print("\n you won")
+            print("\n\U0001F44D\U0001F44D\U0001F44D CONGRATULATION ..!! YOU WON THE GAME")
             break
-        print("------------------------------")
-        print("\ntries left {}".format(tries))
+        print("----------------------------------------")
+        print("\nTries left          = {}".format(tries))
         t_left = set_tries_left(tries)
-        guess_word=input("input a char\n")
+        guess_word=input("Input a char        = ")
         if len(guess_word) != 1:
-            print("single char only...!!!")
+            print("\n single char only...!!!\n")
             continue
         if guess_word in guess_word_list:
-            print("already guessed")
+            print("already guessed u\u263A")
             continue
         else:
             guess_word_list.append(guess_word)
         guessed_line = type_guess_word(s_word, guess_word,guessed_line)
         print (guessed_line)
-        print ("already guessed word{}".format(guess_word_list))
-        print("==============================")
+        print ("already guessed word ={}".format(guess_word_list))
+        print("========================================")
         tries = tries-1
-        if (tries < 0):
+        if (tries < 1):
             a= False
-            print ("no tries left sorry..")
+            print ("\n So tries left sorry..the secret word is {} \U0001F622 \U0001F622\n\n".format(s_word))
         
 n_main()
