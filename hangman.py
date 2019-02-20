@@ -46,6 +46,7 @@ def n_main():
     a =True    
     tries=10
     guess_word_list = []
+    
     while a:
         if guessed_line == s_word:
             print("\n\U0001F44D\U0001F44D\U0001F44D CONGRATULATION ..!! YOU WON THE GAME")
@@ -54,6 +55,9 @@ def n_main():
         print("\nTries left          = {}".format(tries))
         t_left = set_tries_left(tries)
         guess_word=input("Input a char        = ")
+        if guess_word.isdigit():
+            print("digits not alloowed")
+            continue
         if len(guess_word) != 1:
             print("\n single char only...!!!\n")
             continue
