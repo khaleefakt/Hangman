@@ -20,11 +20,6 @@ def get_masked_word(word_file):
         mask_word="*" * len(word_file)
         return mask_word
     
-def set_tries_left(tries):
-   
-    tries_left = (10 - tries)
-    return tries_left
-
 def type_guess_word(word_file, guess_word, guessed_line):
     if guess_word in word_file:
         x = 0
@@ -36,6 +31,10 @@ def type_guess_word(word_file, guess_word, guessed_line):
         print("Wrong guess")
     return guessed_line
 
+def user_input():
+    letter = input("enter the character...")
+    return letter
+
     
 def n_main():
     print ("Welcome.")
@@ -46,26 +45,20 @@ def n_main():
     a =True    
     tries=10
     guess_word_list = []
-    
     while a:
         if guessed_line == s_word:
             print("\n\U0001F44D\U0001F44D\U0001F44D CONGRATULATION ..!! YOU WON THE GAME")
             break
         print("----------------------------------------")
         print("\nTries left          = {}".format(tries))
-        t_left = set_tries_left(tries)
-        guess_word=input("Input a char        = ")
+        guess_word = user_input()
         if guess_word.isdigit():
-            print("digits not alloowed")
+            print("digits not allowed")
             continue
         if len(guess_word) != 1:
             print("\n single char only...!!!\n")
             continue
-        if guess_word in guess_word_list:
-            print("already guessed u\u263A")
-            continue
-        else:
-            guess_word_list.append(guess_word)
+        guess_word_list.append(guess_word)
         guessed_line = type_guess_word(s_word, guess_word,guessed_line)
         print (guessed_line)
         print ("already guessed word ={}".format(guess_word_list))
@@ -74,5 +67,6 @@ def n_main():
         if (tries < 1):
             a= False
             print ("\n So tries left sorry..the secret word is {} \U0001F622 \U0001F622\n\n".format(s_word))
-        
-n_main()
+
+if __name__ == "__main__":
+    n_main()
