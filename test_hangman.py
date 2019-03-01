@@ -22,14 +22,16 @@ def test_secret_word_no_proper_nouns():
 def test_guess_word_masked():
     assert (hangman.get_masked_word("policeman") == "*********")
 
-def test_tries_left():
-    assert (hangman.set_tries_left(6) == 4)
-
 def test_type_guess_word():
     assert (hangman.type_guess_word("policeman","a","*********") == "*******a*")
     assert (hangman.type_guess_word("policeman","p","*******a*") == "p******a*")
-def test_set_masked_letter():
-    assert (hangman.set_masked_word() == "")  
+    assert (hangman.type_guess_word("policeman","q","p******a*") == "p******a*")
+
+def test_user_input():
+    def fake_input(_):
+        return 'a'
+    assert hangman.user_input(fake_input) == 'a'
+
 
 
 

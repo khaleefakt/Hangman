@@ -29,17 +29,18 @@ def type_guess_word(word_file, guess_word, guessed_line):
             x = x+1
     else:
         print("Wrong guess")
+        print("-----------------------------")
     return guessed_line
 
-def user_input():
-    letter = input("enter the character...")
+def user_input(input=input):
+    letter = input("enter the chacracter=")
     return letter
 
     
 def n_main():
     print ("Welcome.")
     s_word =(get_secret_word())
-    print(s_word)
+    #print(s_word)
     guessed_line=(get_masked_word(s_word))
     print(get_masked_word(s_word))
     a =True    
@@ -52,6 +53,9 @@ def n_main():
         print("----------------------------------------")
         print("\nTries left          = {}".format(tries))
         guess_word = user_input()
+        if guess_word in guess_word_list:
+            print("already guess")
+            continue
         if guess_word.isdigit():
             print("digits not allowed")
             continue
